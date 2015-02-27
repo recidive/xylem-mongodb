@@ -45,36 +45,7 @@ MongoDBAdapter.prototype.list = function(modelSettings, query, callback) {
   var data = {};
 
   var self = this;
-
-  collection.find(query).toArray(function(error, items) {
-    if (error) {
-      return callback(error);
-    }
-
-    callback(null, items);
-  });
-};
-
-/**
- * List stored items.
- *
- * @param {Object} modelSettings Model settings object.
- * @param {Object} query Optional query object.
- * @param {Function} callback Function to run when data is returned.
- */
-MongoDBAdapter.prototype.list = function(modelSettings, query, callback) {
-  var collection = this.database.collection(modelSettings.name);
-  var data = {};
-
-  var self = this;
-
-  collection.find(query).toArray(function(error, items) {
-    if (error) {
-      return callback(error);
-    }
-
-    callback(null, items);
-  });
+  collection.find(query).toArray(callback);
 };
 
 /**
