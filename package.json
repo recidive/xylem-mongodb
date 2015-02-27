@@ -1,0 +1,28 @@
+{
+  "name": "xylem-mongodb",
+  "version": "0.0.1",
+  "description": "MongoDB adapter for Xylem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/recidive/xylem-mongodb.git"
+  },
+  "keywords": [
+    "mongodb",
+    "adapter",
+    "xylem"
+  ],
+  "author": "Henrique Recidive",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/recidive/xylem-mongodb/issues"
+  },
+  "homepage": "https://github.com/recidive/xylem-mongodb",
+  "dependencies": {
+    "extend": "^2.0.0",
+    "mongodb": "^1.4.32"
+  }
+}
