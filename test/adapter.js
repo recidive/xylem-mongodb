@@ -46,7 +46,7 @@ describe('MongoDBAdapter', function(done) {
         throw error;
       }
 
-      adapter.list(modelSettings, {}, function(error, items) {
+      adapter.list(modelSettings, {criteria: {}}, function(error, items) {
         if (error) {
           throw error;
         }
@@ -65,7 +65,7 @@ describe('MongoDBAdapter', function(done) {
         throw error;
       }
 
-      adapter.get(modelSettings, sample.id, function(error, item) {
+      adapter.get(modelSettings, {criteria: {id: sample.id}}, function(error, item) {
         if (error) {
           throw error;
         }
@@ -82,14 +82,14 @@ describe('MongoDBAdapter', function(done) {
         throw error;
       }
 
-      adapter.destroy(modelSettings, sample.id, function(error, item) {
+      adapter.destroy(modelSettings, sample, function(error, item) {
         if (error) {
           throw error;
         }
 
         assert.ok(item);
 
-        adapter.get(modelSettings, sample.id, function(error, item) {
+        adapter.get(modelSettings, {criteria: {id: sample.id}}, function(error, item) {
           if (error) {
             throw error;
           }
